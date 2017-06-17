@@ -7,14 +7,34 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Songbird</title>
   </head>
-  <body class="container-fluid">
-    <header>
+  <body class="container-fluid bg-info">
+    <header class="page-header">
         <h1>Songbird</h1>
         <h3>Only Taking Your Requests Since 2017</h3>
+        <div id="headerArt"></div>
 
     </header>
 
-    <section class="search-play">
+    <section class="search-play-div">
+      <form class="form-inline pull-right track-search">
+        <input class="form-control" type="search" name="search" value="" placeholder="Search for your favorite song" id="searchInput">
+        <input class="btn btn-info" type="submit" name="button"></input>
+      </form>
+
+      <div class="track-play">
+        <!-- <audio
+          controls="controls" src="https://api.soundcloud.com/tracks/328579024/stream" autoplay>
+        </audio> -->
+      </div>
+
+      <div class="track-info">
+
+        
+      </div>
+
+    </section>
+
+    <section class="recommends">
 
     </section>
 
