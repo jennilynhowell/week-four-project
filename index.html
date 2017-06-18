@@ -4,39 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Sacramento" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Songbird</title>
   </head>
-  <body class="container-fluid bg-info">
-    <header class="page-header">
-        <h1>Songbird</h1>
-        <h3>Only Taking Your Requests Since 2017</h3>
-        <div id="headerArt"></div>
+  <body class="container-fluid" id="body-base-layer">
+    <div class="container-fluid layer">
+      <header class="page-header">
+          <h1>Songbird</h1>
+          <!-- <h3>Only Taking Your Requests Since 2017</h3> -->
+          <div class="now-playing-div">
+            <h3 class="now-playing">now playing</h3>
+            <div id="headerArt"></div>
+          </div>
 
-    </header>
 
-    <section class="search-play-div">
-      <form class="form-inline pull-right track-search">
-        <input class="form-control" type="search" name="search" value="" placeholder="Search for your favorite song" id="searchInput">
-        <input class="btn btn-info" type="submit" name="button"></input>
-      </form>
+      </header>
 
-      <div class="track-play">
-        <!-- <audio
-          controls="controls" src="https://api.soundcloud.com/tracks/328579024/stream" autoplay>
-        </audio> -->
-      </div>
+      <section class="search-play-div">
+        <div class="track-play">
+          <audio
+            controls="controls" autoplay>
+          </audio>
+        </div>
 
-      <div class="track-info">
+        <form class="form-inline pull-left track-search">
+          <input class="form-control" type="search" name="search" value="" placeholder="Find your favorite song" id="searchInput">
+          <input class="btn btn-info" type="submit" name="button"></input>
+        </form>
 
-        
-      </div>
 
-    </section>
+        <!-- <div class="track-list">
+          <h3>Your search results</h3>
 
-    <section class="recommends">
 
-    </section>
+        </div> -->
+
+      </section>
+
+      <section class="recommends">
+
+      </section>
+    </div>
+
 
     <script src="js/main.js" charset="utf-8"></script>
   </body>

@@ -4,7 +4,7 @@
   const urlTrack = 'https://api.soundcloud.com/tracks?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f';
   const urlPlaylist = 'https://api.soundcloud.com/playlists?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f';
 
-  let trackSearchQuery = 'Coldplay';
+  let trackSearchQuery = 'Hall of Fame';
   let trackParams = '&q=' + trackSearchQuery;
 
   let playlistSearchQuery = '';
@@ -14,7 +14,7 @@
   let searchPlayDiv = document.querySelector('.search-play-div');
   let searchForm = document.querySelector('.track-search');
   let trackPlay = document.querySelector('.track-play');
-  let trackInfoDiv = document.querySelector('.track-info');
+  let trackListDiv = document.querySelector('.track-list');
   let recommends = document.querySelector('.recommends');
 
   searchForm.addEventListener('submit', function(e) {
@@ -25,22 +25,20 @@
   })
 
 
-
-
-  fetch((urlTrack + trackParams)).then(function(res) {
-    res.json().then(function(data){
-      data.forEach(function(i){
-        let title = i.title;
-        let artist = i.user.username;
-        let genre = i.genre;
-        let artwork = i.artwork_url;
-        console.log('TrackSearch: ', title, artist, genre, artwork);
-        nowPlaying(title, artist, genre, artwork);
-      });
-
-    })
-
-  })
+  // fetch(urlTrack).then(function(res) {
+  //   res.json().then(function(data){
+  //     data.forEach(function(i){
+  //       let title = i.title;
+  //       let artist = i.user.username;
+  //       let genre = i.genre;
+  //       let artwork = i.artwork_url;
+  //       console.log('TrackSearch: ', title, artist, genre, artwork);
+  //       nowPlaying(title, artist, genre, artwork);
+  //     });
+  //
+  //   })
+  //
+  // })
   //
   // fetch((urlPlaylist + playlistParams)).then(function(res) {
   //   res.json().then(function(data){
@@ -54,9 +52,9 @@
   // })
 
 function nowPlaying (title, artist, genre, artwork){
-  let trackInfoData = document.createElement('ul');
-  trackInfoData.setAttribute('class', 'list-inline list-unstyled');
-  trackInfoDiv.appendChild(trackInfoData);
+  let trackListData = document.createElement('ul');
+  trackListData.setAttribute('class', 'list-inline list-unstyled');
+  trackListDiv.appendChild(trackListData);
 
   let artworkDiv = document.createElement('li');
   artworkDiv.setAttribute('id', 'artworkDiv');
@@ -68,10 +66,10 @@ function nowPlaying (title, artist, genre, artwork){
   genreDiv.setAttribute('id', 'genreDiv');
 
 
-  trackInfoData.appendChild(artworkDiv);
-  trackInfoData.appendChild(titleDiv);
-  trackInfoData.appendChild(artistDiv);
-  trackInfoData.appendChild(genreDiv);
+  trackListData.appendChild(artworkDiv);
+  trackListData.appendChild(titleDiv);
+  trackListData.appendChild(artistDiv);
+  trackListData.appendChild(genreDiv);
 
   let artworkImg = document.createElement('div');
   artworkDiv.appendChild(artworkImg);
