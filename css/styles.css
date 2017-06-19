@@ -5,12 +5,18 @@
   background-repeat: repeat-x;
   padding-left: 0px;
   padding-right: 0px;
+  height: 2000px;
+  width: 100vw;
 }
 
 .layer {
-  height: 100vh;
+  height: 2000px;
   width: 100vw;
-  background: linear-gradient(to right bottom, rgba(107, 168, 168, 0.9), rgba(107, 168, 168, 0.4));
+  background: linear-gradient(
+    to right bottom,
+    rgba(107, 168, 168, 0.9),
+    rgba(107, 168, 168, 0.4)
+    );
   margin: 0px;
   padding-left: 15px;
   padding-right: 15px;
@@ -60,4 +66,57 @@ audio {
   background-color: rgba(107, 168, 168);
   width: 65%;
   margin-top: 15px;
+}
+
+.track-search {
+  width: 65%;
+}
+
+.form-control[type="search"] {
+  width: 80%;
+}
+
+.track-list {
+  margin: 0 auto;
+  padding-top: 5%;
+  width: 85%;
+  text-align: center;
+
+}
+
+.track-list h3 {
+  font-family: 'Sacramento', cursive;
+  font-size: 5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.song-block {
+  flex: 0 1 25%;
+  margin: 2%;
+  text-align: center;
+  width: 200px;
+  background-color: rgba(107, 168, 168, 0.9);
+  border-radius: 10px;
+  padding: 1.5%;
+}
+
+.img-thumbnail {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+
+.song-block li {
+  padding: 2%;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #333;
 }
