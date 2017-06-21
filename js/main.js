@@ -5,10 +5,6 @@
 
   //JQuery ajax req and dom writing
   let $searchResults = $('.search-results');
-  let title = '';
-  let artist = '';
-  let genre = '';
-  let artwork = '';
 
   $('.form-inline').on('submit', function(e){
     e.preventDefault();
@@ -17,19 +13,21 @@
     $.ajax(urlTrack + searchParam).then(function(data){
       data.forEach(function(song){
         let title = song.title;
-        let stream = song.stream_url;
+        let stream = (song.stream_url + '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f');
         let artist = song.user.username;
         let genre = song.genre;
-        if (!genre){
-          genre = '(not provided)';
-        }
+          if (!genre){
+            genre = '(not provided)';
+          };
         let artwork = song.artwork_url;
-        if (!artwork){
-          artwork = 'img/bird.jpg'
-        }
+          if (!artwork){
+            artwork = 'img/bird.jpg'
+          };
 
+        //build dom
         $searchResults.append(`<ul class="list-unstyled song-block">
                                 <li><img class="img-thumbnail" src="${artwork}"></li>
+                                <li style="display: none" class="this-artwork"><p>'${artwork}'</p></li>
 
                                 <li id="stream-song"><a href="${stream}">Title: ${title}</a></li>
 
@@ -39,14 +37,22 @@
 
                               </ul>
                               `)
+
+
+        //play selected song and update headerArt div
+        let $audio = $('audio');
+        let $headerImg = $('.album-art');
+        $searchResults.on('click', function(e){
+          e.preventDefault();
+          console.log(e.currentTarget);
+          $headerImg.attr('src', alArt);
+          $headerImg.attr('alt', 'Album Artwork');
+          $audio.attr('src', stream);
+
+        })
+
       })
     });
-
-  let $streamSong = $('stream-song');
-  $streamSong.on('click', function(){
-    console.log($streamSong);
-    $('audio').attr('src', /*?????*/)
-  })
 
   })
 
