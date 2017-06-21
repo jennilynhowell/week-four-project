@@ -45,7 +45,8 @@
         $searchResults.on('click', function(e){
           e.preventDefault();
           console.log(e.currentTarget);
-          $headerImg.attr('src', alArt);
+          //this is selecting the last 'artwork' b/c in a loop... how to change??????????????????????
+          // $headerImg.attr('src', artwork);
           $headerImg.attr('alt', 'Album Artwork');
           $audio.attr('src', stream);
 
@@ -55,7 +56,5 @@
     });
 
   })
-
-
 
 }(jQuery));
