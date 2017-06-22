@@ -1,3 +1,6 @@
+body {
+  padding-bottom: 70px;
+}
 
 #body-base-layer {
   background-image: url('../img/upfeathers.png');
@@ -126,4 +129,21 @@ audio {
   padding: 2%;
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
+}
+
+.navbar-fixed-bottom {
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: rgba(107, 168, 168, 0.9);
+
+}
+
+.navbar-fixed-bottom span {
+  float: right;
+  padding-right: 20px;
+  margin-top: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
 }
