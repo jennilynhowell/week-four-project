@@ -5,13 +5,30 @@
 
   //JQuery ajax req and dom writing
   let $searchResults = $('.search-results');
+  let $songBlock = $('.song-block')
+  // let $trackSearch = $('.track-search');
+  // let $searchInputValue = $('searchInput').attr('value');
+  //
+  // $trackSearch.on('click', function(e){
+  //   console.log($searchInputValue);
+  //   // $searchInputValue('');
+  // })
 
   $('.form-inline').on('submit', function(e){
     e.preventDefault();
+
+
+
+    //set search
     let searchParam = searchInput.value;
     searchParam = '&q=' + searchParam;
     $.ajax(urlTrack + searchParam).then(function(data){
+
+      //clear search box upon click
+      searchInput.value = '';
+
       data.forEach(function(song){
+
         let title = song.title;
         let stream = (song.stream_url + '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f');
         let artist = song.user.username;
@@ -40,8 +57,7 @@
         //play selected song and update headerArt div
         let $audio = $('audio');
         let $songBlock = $('.song-block');
-        let $streamSong = $('.stream-song');
-
+        // console.log($songBlock.find('li:first'));
         $songBlock.on('click', function(e){
           e.preventDefault();
           let $currentSong = e.target.href;
