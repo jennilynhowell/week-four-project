@@ -6,18 +6,9 @@
   //JQuery ajax req and dom writing
   let $searchResults = $('.search-results');
   let $songBlock = $('.song-block')
-  // let $trackSearch = $('.track-search');
-  // let $searchInputValue = $('searchInput').attr('value');
-  //
-  // $trackSearch.on('click', function(e){
-  //   console.log($searchInputValue);
-  //   // $searchInputValue('');
-  // })
 
   $('.form-inline').on('submit', function(e){
     e.preventDefault();
-
-
 
     //set search
     let searchParam = searchInput.value;
